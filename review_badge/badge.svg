@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+     viewBoxの大きさは、一番外側にある四角形に合せてある。
+-->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink= "http://www.w3.org/1999/xlink" viewBox="14 10 170 170">
+    <defs>
+        <!--
+             circle1は最も内側にある円であり、この円の中にチェックマークがある。
+             また、この円に沿って"University of Tsukuba * From College of Information Science *"の文字列が描画される。
+        -->
+        <path id="circle1" d="M 100,100 m 0,-50 a 46,46 0 1,1 -1,0 h 1" stroke="black" fill="#000000"/>
+
+        <!--
+             circle2は"University of Tsukuba * From College of Information Science *"の文字列の外側にある円である。
+             この円は"University of Tsukuba ...."という白い文字列が見えるようにする、黒の円である。
+        -->
+        <path id="circle2" d="M 100,90 m 0,-50 a 56,56 0 1,1 -1,0 h 1" stroke="black" fill="#000000"/>
+
+        <!--
+             チェックマーク、transformで移動して、大きさを変更している。
+        -->
+        <path
+          style="fill:#FFFFFF;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="m 243.56158,560.65196 c 52.28135,33.56323 61.00307,48.17738 69.48579,65.23157 12.43736,25.00487 45.06327,26.73125 56.43234,-2.32078 22.64859,-57.87526 67.02468,-147.13442 127.20868,-174.22987 23.59889,-10.62446 1.43807,-57.73891 -28.8233,-36.55308 -74.41936,52.10061 -94.55879,92.49717 -130.00137,168.43428 -24.18605,-47.24645 -58.25675,-52.19722 -74.11202,-52.42757 -26.91808,-0.39109 -32.1457,24.1903 -20.19012,31.86545 z"
+          id="check" transform="translate(10, -27) scale(0.24)"/>
+
+        <!--
+             circle2の外側にある円であり、この円に沿って"Artifact * Overrun * Evaluated * WORD *"が描画される。
+             circle2に沿って文字列を描画すると、baselineを突き抜ける文字が汚くなるので、
+             やや直径の大きいこの円を用意して使っている。
+        -->
+        <path id="circle3" d="M 100,86 m 0,-50 a 60,60 0 1,1 -1,0 h 1" stroke="none" fill="#FFFFFF"/>
+
+        <!--
+             circle3の外側にある円。
+        -->
+        <path id="circle4" d="M 100,64 m 0,-50 a 80,80 0 1,1 -1,0 h 1" stroke="none" fill="#FFFFFF"/>
+        
+        <!--
+             最も外側にある四角形。
+        -->
+        <path id="rect" d="M 14,10 h 170 v 170 h-170 z"/>
+    </defs>
+
+    <!--
+         この順序は意味があるので注意。
+    -->
+    <use xlink:href="#rect"/>
+    <use xlink:href="#circle4"/>
+    <use xlink:href="#circle3"/>
+    <use xlink:href="#circle2"/>
+    <use xlink:href="#circle1"/>
+    <use xlink:href="#check"/>
+
+    <text fill="#FFFFFF" font-family="Nanum Gothic" font-size="10">
+        <textPath xlink:href="#circle1">University of Tsukuba * From College of Information Science * </textPath>
+    </text>
+
+    <text fill="#000000" font-family="Nanum Gothic" font-size="19">
+        <textPath xlink:href="#circle3">
+            <tspan style="font-weight:bold;">Artifact</tspan> * Overrun * <tspan style="font-weight:bold;">Reviewed</tspan> * <tspan style="font-family:HoeflerText-Regular;">WORD</tspan> *
+        </textPath>
+    </text>
+</svg>
