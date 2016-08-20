@@ -58,7 +58,7 @@
 
     <text fill="#000000" font-family="Nanum Gothic" font-size="19">
         <textPath xlink:href="#circle3">
-            <tspan style="font-weight:bold;">Artifact</tspan> * Overrun * <tspan style="font-weight:bold;">Reviewed</tspan> * <tspan style="font-family:HoeflerText-Regular;">WORD</tspan> *
+            <tspan style="font-weight:bold;">Artifact</tspan> * Overrun * <tspan style="font-weight:bold;">Reviewed</tspan> * <tspan style="font-family:'Hoefler Text';">WORD</tspan> *
         </textPath>
     </text>
 </svg>
